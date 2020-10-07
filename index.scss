@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+@mixin FlexStyle($flex, $spaceb, $w100, $m480) {
+  display: $flex;
+  justify-content: $spaceb;
+  width: $w100;
+  max-width: $m480;
+}
+
+body {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  background-color: #F3F3F3;
+
+
+  header {
+    width: 100vw;
+    height: 60px;
+    line-height: 60px;
+
+    h1 {
+      color: F3F3F3;
+
+      font-size: 28px;
+      font-weight: 900;
+      line-height: 60px;
+
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+
+  main{
+
+    .sort-options ul {
+
+      @include FlexStyle(flex,space-between, 100%, 480px);
+
+      margin: 30px auto;
+
+      li button{
+        flex: 1 1 33%;
+        appearance: none;
+
+        background-color: #FFCE00;
+
+        border: none;
+        border-radius: 8px;
+        outline: none;
+
+        padding: 15px 5px;
+        margin: 0 8px;
+
+        font-size: 16px;
+        font-weight: 700;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+    }
+
+    .list-headers ul {
+      @include FlexStyle(flex,space-between, 100%, 480px);
+
+      margin: 30px auto 0;
+      padding: 0 15px;
+
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .list {
+      display: block;
+
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+
+      .list-item {
+        @include FlexStyle(flex,space-between, 100%, null);
+
+        margin: 15px 0;
+        padding: 15px;
+
+        border: 1px solid #171717;
+        border-radius: 8px;
+
+        cursor: pointer;
+      }
+    }
+  }
+}
+
